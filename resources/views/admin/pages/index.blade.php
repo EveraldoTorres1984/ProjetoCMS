@@ -30,7 +30,7 @@
 
                                 <a href="{{ route('pages.edit', ['page' => $page->id]) }}" class="btn btn-sm btn-warning">Editar</a>
 
-                                <form class="d-inline" action="{{ route('pages.destroy', ['page' => $page->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta Página?">
+                                <form class="d-inline" action="{{ route('pages.destroy', ['page' => $page->id]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta Página?')">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Excluir</button>
