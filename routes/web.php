@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site;
 use App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Site\PageController;
+
+
 
 Route::get('/', [Site\HomeController::class, 'index']);
 
@@ -30,3 +33,5 @@ Route::prefix('painel')->group(function () {
     Route::get('settings', [Admin\SettingController::class, 'index'])->name('settings');
     Route::put('settingssave', [Admin\SettingController::class, 'save'])->name('settings.save');
 });
+
+Route::fallback([Site\PageController::class, 'index']);
